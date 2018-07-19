@@ -17,6 +17,15 @@ Route::auth();
 
 Route::get('/about', 'AboutController@index');
 
+Route::get('/tasks', [ 'as'=>'Tasks', 'middleware' => ['auth'], 'uses'=>'Controllers\TasksController@show']);
+
+Route::get('/get_tasks/{type}', [ 'middleware' => ['auth'], 'uses'=>'Controllers\TasksController@get_tasks']);
+
+Route::get('/get_task/{id}', [ 'middleware' => ['auth'], 'uses'=>'Controllers\TasksController@get_task']);
+
+Route::post('/save_task', [ 'middleware' => ['auth'], 'uses'=>'Controllers\TasksController@save_task']);
+
+
 Route::get('/personal_page', [ 'as'=>'PersonalPage', 'middleware' => ['auth'], 'uses'=>'Controllers\PersonalPageController@show']);
 
 Route::get('/add_words', [ 'as'=>'AddWords', 'middleware' => ['auth'], 'uses'=>'Controllers\AddWordsController@ShowWord']);

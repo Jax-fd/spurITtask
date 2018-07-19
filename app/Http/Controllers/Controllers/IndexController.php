@@ -18,8 +18,8 @@ class IndexController extends Controller
 			abort(404);
 			
 		}else{
-			if(view()->exists('personalpage')){
-				return redirect('/personal_page');
+			if(view()->exists('tasks')){
+				return redirect('/tasks');
 			}
 			abort(404);
 		}
