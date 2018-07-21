@@ -55,7 +55,7 @@ function save_task(id){
 	    data: data,
 	    //async: true,
 	    success: function (data) {
-	    	console.log(data);
+	    	//console.log(data);
 	    	if(data.error == 0){
 	    		$('#shadow').hide();
 				$('#task_window').hide();
@@ -83,7 +83,7 @@ function load_task(id){
 	    type: 'GET',
 	    url: '/get_task/' + id,
 	    success: function (data) {
-	    	console.log(data);
+	    	//console.log(data);
 	    	if(data.error == 0){
 	    		$('#task_id').val(data.data.id);
     			$('#task_name').val(data.data.name);
@@ -100,6 +100,28 @@ function load_task(id){
 	});
 }
 
+function load_comments(task_id){
+	$.ajax({
+	    type: 'GET',
+	    url: '/get_comments/' + task_id,
+	    success: function (data) {
+	    	console.log(data);
+	    	/*if(data.error == 0){
+	    		$('#task_id').val(data.data.id);
+    			$('#task_name').val(data.data.name);
+				$('#task_description').val(data.data.description);
+				$('#task_status').val(data.data.status);
+			}else{
+	    		alert('Ошибка получения данных.');
+	    	}*/
+	    },
+	    error: function (data, status, xhr) {
+	    	alert('Ошибка получения комментариев к задаче..');
+	    	//console.log(data);
+	    }
+	});
+}
+
 function displayTask(id){
 	clearForm();
 	if(id != 0){
@@ -107,6 +129,7 @@ function displayTask(id){
 		$('#save_task').text('Сохранить');
 		$("#task_name, #task_description").prop('disabled', true);
 		load_task(id);
+		load_comments(id);
 	}else{
 		$('#task_window_header').text('Создание задачи');
 		$('#save_task').text('Создать');

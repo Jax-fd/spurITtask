@@ -9,7 +9,13 @@ class Task extends Model
     protected $fillable = [
         'name', 'description', 'status',
     ];
-
+    
+    public function comments()
+    {
+        return $this->belongsToMany('App\Comment','comments')
+                            ->withPivot('text','user_id')
+                            ->withTimestamps();
+    }
     /*protected $hidden = [
         'password', 'remember_token',
     ];*/

@@ -17,14 +17,20 @@ Route::auth();
 
 Route::get('/about', 'AboutController@index');
 
+//Страница задач
 Route::get('/tasks', [ 'as'=>'Tasks', 'middleware' => ['auth'], 'uses'=>'Controllers\TasksController@show']);
-
+//Получение задач с определенным статусом
 Route::get('/get_tasks/{type}', [ 'middleware' => ['auth'], 'uses'=>'Controllers\TasksController@get_tasks']);
-
+//Получение одной задачи
 Route::get('/get_task/{id}', [ 'middleware' => ['auth'], 'uses'=>'Controllers\TasksController@get_task']);
-
+//Добавление/редактирование задачи
 Route::post('/save_task', [ 'middleware' => ['auth'], 'uses'=>'Controllers\TasksController@save_task']);
+//Получение комментариев к задаче
+Route::get('/get_comments/{task_id}', [ 'middleware' => ['auth'], 
+		   'uses'=>'Controllers\TasksController@get_comments']);
 
+//Добавление комментария к задаче
+Route::post('/add_comment/{task_id}', [ 'middleware' => ['auth'], 'uses'=>'Controllers\CommentsController@add_comment']);
 
 Route::get('/personal_page', [ 'as'=>'PersonalPage', 'middleware' => ['auth'], 'uses'=>'Controllers\PersonalPageController@show']);
 

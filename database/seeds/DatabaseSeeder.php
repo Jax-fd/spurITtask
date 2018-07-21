@@ -57,6 +57,44 @@ class DatabaseSeeder extends Seeder
 					 'created_at' => '2018-07-20 14:00'
 					],
 				]);
-       
+        
+        //Seeder for comments     	
+       	DB::table('comments')->insert([
+					['user_id' => 1,
+					 'task_id' => 1,
+					 'text' => "Some comment...1",
+					 'created_at' => '2018-07-18 14:00'
+					],
+					['user_id' => 2,
+					 'task_id' => 2,
+					 'text' => "Some comment...2",
+					 'created_at' => '2018-07-19 15:00'
+					],
+					['user_id' => 3,
+					 'task_id' => 1,
+					 'text' => "Some comment...3",
+					 'created_at' => '2018-07-20 10:00'
+					],
+					['user_id' => 3,
+					 'task_id' => 3,
+					 'text' => "Some comment...4",
+					 'created_at' => '2018-07-17 14:00'
+					],
+					['user_id' => 4,
+					 'task_id' => 1,
+					 'text' => "Some comment...5",
+					 'created_at' => '2018-07-21 11:00'
+					],
+					['user_id' => 1,
+					 'task_id' => 2,
+					 'text' => "Some comment...6",
+					 'created_at' => '2018-07-20 09:00'
+					],
+					['user_id' => 3,
+					 'task_id' => 4,
+					 'text' => "Some comment...7",
+					 'created_at' => '2018-07-22 23:59'
+					],
+				]);
     }
 }

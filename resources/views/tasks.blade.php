@@ -37,7 +37,7 @@
 	<div class="col-md-12 task_form">
 		<form>
 			<input type="hidden" name="_token" value="{{ csrf_token() }}">
-			<input type="hidden" id="task_id" value="0"><br><br>
+			<input type="hidden" id="task_id" value="0">
 			<label for="task_name">Название:</label><input type="text" id="task_name" valid-type="title"><br><br>
 			<label for="task_description">Описание:</label><br><textarea id="task_description"></textarea><br><br>
 			<label for="task_status">Статус:</label>
