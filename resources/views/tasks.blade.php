@@ -54,5 +54,26 @@
 			</a>
 		</form>
 	</div>
+	<div style="clear: left"></div>
+	
+	<div id="task_comments" hidden>
+		<div class="panel-heading">Комментарии</div>
+		<div id="add_comment_box">
+			<textarea id="new_comment_text" placeholder="Введите комментарий..."></textarea>
+			<a id="add_comment" class="btn btn-primary btn-p btn-cancel">
+				Отправить
+			</a>
+		</div>
+		<div id="comments_list">
+			<!-- <div class="t_comment">
+				<p class="comment_date">21.07.2018 15:00</p>
+				<p class="comment_text"><b>User: </b>Some comment</p>
+			</div>
+			<div class="t_comment">
+				<p class="comment_date">21.07.2018 15:00</p>
+				<p class="comment_text"><b>User: </b>Some comment</p>
+			</div> -->
+		</div>
+	</div>
 </div>
 @endsection
