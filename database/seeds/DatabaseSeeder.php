@@ -11,10 +11,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
-
-        //Seeder for tasks
-        //DB::table('tasks')->truncate();
+		//DB::table('tasks')->truncate();
+        //Seeder for users
     	DB::table('users')->insert([
     				['name' => 'Jax',
 					 'email' => 'jax_fd@mail.ru',
@@ -42,7 +40,7 @@ class DatabaseSeeder extends Seeder
 					 'created_at' => '2018-07-18 23:00'
 					],
         		]);
-
+    	//Seeder for tasks
         DB::table('tasks')->insert([
 					['name' => 'Task 1',
 					 'description' => "Some description...Some description...Some description...Some description...Some description...Some description...Some description...Some description...Some description...Some description...Some description...Some description...",
@@ -85,7 +83,6 @@ class DatabaseSeeder extends Seeder
 					 'created_at' => '2018-07-20 14:00'
 					],
 				]);
-        
         //Seeder for comments     	
        	DB::table('comments')->insert([
 					['user_id' => 1,
