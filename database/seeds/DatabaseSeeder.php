@@ -15,6 +15,34 @@ class DatabaseSeeder extends Seeder
 
         //Seeder for tasks
         //DB::table('tasks')->truncate();
+    	DB::table('users')->insert([
+    				['name' => 'Jax',
+					 'email' => 'jax_fd@mail.ru',
+					 'password' => "\$2y\$10\$DuOGdOsX.Ft0o1/l6hmMTuuoUFd/QXpAUcOKMdxVt3l1gMXnm9X92", //123456
+					 'created_at' => '2018-07-18 23:00'
+					],
+					['name' => 'Arnold',
+					 'email' => 'look@at.me',
+					 'password' => "\$2y\$10\$DuOGdOsX.Ft0o1/l6hmMTuuoUFd/QXpAUcOKMdxVt3l1gMXnm9X92", //123456
+					 'created_at' => '2018-07-18 23:00'
+					],
+					['name' => 'John',
+					 'email' => 'what@a.day',
+					 'password' => "\$2y\$10\$DuOGdOsX.Ft0o1/l6hmMTuuoUFd/QXpAUcOKMdxVt3l1gMXnm9X92", //123456
+					 'created_at' => '2018-07-18 23:00'
+					],
+					['name' => 'Sarah',
+					 'email' => 'connor@sky.net',
+					 'password' => "\$2y\$10\$DuOGdOsX.Ft0o1/l6hmMTuuoUFd/QXpAUcOKMdxVt3l1gMXnm9X92", //123456
+					 'created_at' => '2018-07-18 23:00'
+					],
+					['name' => 'Kyle',
+					 'email' => 'kyle@sky.net',
+					 'password' => "\$2y\$10\$DuOGdOsX.Ft0o1/l6hmMTuuoUFd/QXpAUcOKMdxVt3l1gMXnm9X92", //123456
+					 'created_at' => '2018-07-18 23:00'
+					],
+        		]);
+
         DB::table('tasks')->insert([
 					['name' => 'Task 1',
 					 'description' => "Some description...Some description...Some description...Some description...Some description...Some description...Some description...Some description...Some description...Some description...Some description...Some description...",
