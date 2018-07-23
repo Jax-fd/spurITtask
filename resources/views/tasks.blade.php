@@ -59,6 +59,7 @@
 	<div id="task_comments" hidden>
 		<div class="panel-heading">Комментарии</div>
 		<div id="add_comment_box">
+			<input type="hidden" name="_token" value="{{ csrf_token() }}">
 			<textarea id="new_comment_text" placeholder="Введите комментарий..."></textarea>
 			<a id="add_comment" class="btn btn-primary btn-p btn-cancel">
 				Отправить

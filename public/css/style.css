@@ -71,7 +71,8 @@ body {
 	padding:0;
 	border-top:1px solid #ddd;
 	border-right:1px solid #ddd;
-	min-height: 300px;
+	/*min-height: 300px;*/
+    min-height: calc(100vh - 256px)
 }
 .pp-block>div:last-child{
 	border-right:none;
@@ -87,6 +88,10 @@ body {
 .pp-block .tasks-list{
 	text-align: left;
 	padding: 5px 14px;
+}
+.tasks-list p{
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .tasks-list .task_in_list{
 	font-weight:bold;
@@ -182,6 +187,11 @@ body {
 	margin:0;
 }
 
+@media (max-width: 991px){
+    .pp-block>div{
+        min-height: auto;
+    }
+}
 .prev_word{
 	text-align:center;
 	padding:30px;
