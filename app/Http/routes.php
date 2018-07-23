@@ -30,20 +30,5 @@ Route::get('/get_comments/{task_id}', [ 'middleware' => ['auth'],
 		   'uses'=>'Controllers\CommentsController@get_task_comments']);
 Route::get('/add_comment/{task_id}', [ 'middleware' => ['auth'], 
            'uses'=>'Controllers\CommentsController@add_comment']);
-
 //Добавление комментария к задаче
 Route::post('/add_comment/{task_id}', [ 'middleware' => ['auth'], 'uses'=>'Controllers\CommentsController@add_comment']);
-
-Route::get('/personal_page', [ 'as'=>'PersonalPage', 'middleware' => ['auth'], 'uses'=>'Controllers\PersonalPageController@show']);
-
-Route::get('/add_words', [ 'as'=>'AddWords', 'middleware' => ['auth'], 'uses'=>'Controllers\AddWordsController@ShowWord']);
-Route::post('/add_words', [ 'as'=>'AddWords', 'uses'=>'Controllers\AddWordsController@SaveWord']);
-
-Route::get('/users_words', [ 'as'=>'UsersWords', 'middleware' => ['auth'], 'uses'=>'Controllers\UsersWordsController@ShowWords']);
-
-Route::get('/repeat_words', [ 'as'=>'RepeatWords', 'middleware' => ['auth'], 'uses'=>'Controllers\RepeatWordsController@ShowWord']);
-Route::post('/repeat_words', [ 'as'=>'RepeatWords', 'uses'=>'Controllers\RepeatWordsController@SaveResult']);
-
-//Route::get('/add_words_end', [ 'as'=>'AddWords', 'middleware' => ['auth'], 'uses'=>'Controllers\AddWordsController@ShowResult']);
-
-

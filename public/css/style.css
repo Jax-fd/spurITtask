@@ -192,13 +192,3 @@ body {
         min-height: auto;
     }
 }
-.prev_word{
-	text-align:center;
-	padding:30px;
-	font-size:15pt;
-}
-.cur_word{
-	text-align:center;
-	padding:30px;
-	font-size:25pt;
-}
